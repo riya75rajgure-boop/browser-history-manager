@@ -28,12 +28,11 @@ class BrowserHistory {
         forward = next;
       }
       this.current.next = null;
+      // After forward entries are removed, current is the list's tail.
+      this.tail = this.current;
+      node.prev = this.current;
+      this.current.next = node;
       this.current = node;
-      node.prev = this.tail === this.current ? null : this.tail;
-      // The current node before the visit is the list's new tail.
-      node.prev = this.tail;
-      if (this.tail) this.tail.next = node;
-      else this.head = node;
       this.tail = node;
     }
     this.size++;
