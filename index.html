@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A browser history manager mini project demonstrating a doubly linked list.">
+  <title>Browser History Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="brand-icon" aria-hidden="true">↔</div>
+      <div>
+        <p class="eyebrow">DATA STRUCTURES MINI PROJECT</p>
+        <h1>Browser History Manager</h1>
+        <p class="subtitle">Explore how a doubly linked list powers back and forward navigation.</p>
+      </div>
+    </header>
+
+    <section class="browser card" aria-label="Browser controls">
+      <div class="window-bar"><span></span><span></span><span></span><p>History Explorer</p></div>
+      <form id="visit-form" class="address-row">
+        <button type="button" id="back-btn" class="icon-btn" aria-label="Go back" title="Go back">←</button>
+        <button type="button" id="forward-btn" class="icon-btn" aria-label="Go forward" title="Go forward">→</button>
+        <label class="sr-only" for="url-input">Website URL</label>
+        <input id="url-input" type="text" placeholder="Enter a URL, e.g. example.com" autocomplete="url" required>
+        <button type="submit" class="primary-btn">Visit page ↗</button>
+      </form>
+      <div class="page-preview">
+        <div class="preview-symbol">◎</div>
+        <p class="eyebrow">CURRENT PAGE</p>
+        <h2 id="current-title">New tab</h2>
+        <p id="current-url">Enter a URL above to get started.</p>
+        <span id="page-status" class="status">Ready</span>
+      </div>
+    </section>
+
+    <section class="history-section">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR JOURNEY</p><h2>Browsing history</h2></div>
+        <div class="history-actions"><span id="count" class="count">0 pages</span><button id="clear-btn" class="text-btn" type="button">Clear history</button></div>
+      </div>
+      <div class="history-card card">
+        <div class="history-head"><span>PAGE</span><span>VISITED</span><span>ACTION</span></div>
+        <div id="history-list" class="history-list">
+          <div class="empty-state"><div>⌁</div><h3>Your history is empty</h3><p>Visit a page to see it appear here.</p></div>
+        </div>
+      </div>
+    </section>
+    <footer><span>Built with a Doubly Linked List</span><span>Mini Project · Data Structures</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
